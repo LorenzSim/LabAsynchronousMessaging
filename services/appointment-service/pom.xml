@@ -84,6 +84,11 @@
 			<artifactId>spotbugs-annotations</artifactId>
 			<version>4.7.3</version>
 		</dependency>
+		<!-- Sending messages with RabbitMQ over AMQP -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-amqp</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -117,15 +122,6 @@
 							</configOptions>
 						</configuration>
 					</execution>
-				</executions>
-			</plugin>
-
-			<!-- Client Generation Config Based On: https://blog.palo-it.com/en/spring-boot-client-and-server-code-generation-using-openapi-3-specs -->
-			<plugin>
-				<groupId>org.openapitools</groupId>
-				<artifactId>openapi-generator-maven-plugin</artifactId>
-				<version>5.3.0</version>
-				<executions>
 					<execution>
 						<id>generate-client</id>
 						<goals>
@@ -160,6 +156,8 @@
 					</execution>
 				</executions>
 			</plugin>
+
+
 		</plugins>
 	</build>
 
